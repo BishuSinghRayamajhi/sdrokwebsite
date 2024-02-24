@@ -1,0 +1,681 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+
+
+      
+        <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+        <!-- Include Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    
+        <!-- Include Slick Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script src="SDROKWebsite.js"></script>
+    <link rel="stylesheet" type="text/css" href="SDROKWebsite.css">
+    <style>
+        .slider {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Customize the appearance of navigation arrows */
+        .slick-prev, .slick-next {
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .slick-prev {
+            left: 10px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        .slick-prev:hover, .slick-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Use <> for navigation arrows */
+        .slick-prev::before,
+        .slick-next::before {
+            content: '\2190'; /* Unicode arrow left */
+        }
+
+        .slick-next::before {
+            content: '\2192'; /* Unicode arrow right */
+        }
+        body {
+            background-color: lightblue;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif; /* Use a common font */
+        }
+
+        header {
+            background-color: rgb(165, 242, 0); /* Dark blue background */
+            color: rgb(239, 0, 0); /* White text color */
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0; /* Remove margin for h1 */
+        }
+
+        .center-buttons {
+            text-align: center;
+        }
+        
+    .animated-text-container {
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        background: linear-gradient(45deg, #3498db, #e74c3c);
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .animated-text {
+        animation: slideRight 10s linear infinite;
+    }
+
+    h1, h2, h3, h4 {
+        margin: 0;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+</style>
+
+<div class="animated-text-container">
+    <div class="animated-text"><h1>Welcome To Social Development & Research Information: Research Article, Case Study</h1></div>
+    <div class="animated-text"><h2>Interviews, Seminars & Webinars, Social Media, News & Updates, Community Engagement</h2></div>
+    <div class="animated-text"><h3>Community Spotlight, Policy Insight, Archaeological Investigation, Academic Field</h3></div>
+    <div class="animated-text"><h4>Life Science, NeuroScience, Human Science</h4></div>
+</div>
+   </style>
+    <title>Social Development & Research Information</title>
+    <title>Advancing Communities Through Insight & Innovation</title>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click-to-Advance Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Adjust the maximum width */
+            margin: auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out; /* Adjust the transition timing */
+        }
+
+        .slide {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%; /* Make the images fill the container */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Click-to-Image Slider</h1>
+</header>
+
+<div class="slider">
+    <div><img src="ImageI.jpg" alt="Slide 1"></div>
+    <div><img src="Imageii.jpg" alt="Slide 2"></div>
+    <div><img src="ImageIII.webp" alt="Slide 3"></div>
+    <div><img src="ImageIV.png" alt="Slide 4"></div>
+    <div><img src="ImageV.jpg" alt="Slide 5"></div>
+    <!-- Add more slides as needed -->
+</div>
+
+
+
+
+<script>
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelector('.slides');
+        const slideWidth = document.querySelector('.slide').offsetWidth;
+        currentSlide = index;
+
+        slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+        } else {
+            // Uncomment the following line to make it a loop
+            // currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+    }
+
+    function nextSlide() {
+        const slides = document.querySelectorAll('.slide');
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+        } else {
+            // Uncomment the following line to make it a loop
+            // currentSlide = 0;
+        }
+        showSlide(currentSlide);
+    }
+    $(document).ready(function(){
+        $('.slider').slick({
+            // Add navigation dots
+            arrows: true, // Add navigation arrows
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<body style="background-color: lightblue;" >
+
+    <h1><img src="Logo.jpg" alt="Logo" height="50" width="50" style="border: 2px solid rgb(255, 255, 255); scroll-margin-right: 10px;"> <strong>Welcome To Social Development & Research Information</strong></h1>
+    <div class="center-buttons">
+        <button onclick="toggleDropdown('HomepageContent')" class="animated-button">Homepage</button>
+        <button onclick="toggleDropdown('navigationContent')" class="animated-button">Navigation</button>
+        <button onclick="toggleDropdown('FooterSectionContent')" class="animated-button">FooterSection</button>
+    </div>
+
+    <div id="HomepageContent" class="dropdown-content">
+        <button>Header Section</button>
+        <button>Content Section</button>
+        <button>Interviews</button>
+        <button>Action Section</button>
+        <button>Desire Section</button>
+    </div>
+
+    <div id="navigationContent" class="dropdown-content">
+        <button onclick="openResearchArticleTab()">Research Article</button>
+        <button onclick="openCaseStudyTab()">Case Study</button>
+        <button onclick="openInterviewsTab()">Interviews</button>
+        <button onclick="openSeminarsAndWebinarsTab()">Seminars And Webinars</button>
+        <button onclick="openSocialMediaTab()">Social Media</button>
+        <button onclick="openNewsAndUpdatesTab()">News And Updates</button>
+        <button onclick="openPolicyInsightTab()">Policy Insight</button>
+        <button onclick="openArchaeologicalInvestigationTab()">Archaeological Investigation</button>
+        <button onclick="openAcademicFieldTab()">Academic Field</button>
+        <button onclick="openLifeScienceTab()">Life Science</button>
+    </div>
+
+    <div id="FooterSectionContent" class="dropdown-content">
+        <button>Navigation Links</button>
+        <button>Copywrite Information</button>
+        <button>Social Media Icons</button>
+        <button>Privacy Policy</button>
+        <button>Terms of Services</button>
+    </div>
+    <hr color="Red" width="100%" align="left">
+</body>
+    
+
+
+    <dl>
+        <ul style="text-align: center;"><dt><h2>Our services for empowering change through insights & innovation: </h2></dt></ul>
+    </dl>
+    <ul style="text-align: center;" class="services-list">
+        <h3> 📚 Research Articles: Delve into groundbreaking insights.</h3>
+        <h3> 🔬 Case Studies: Uncover solutions to real-world challenges.</h3>
+        <h3> 🎙 Interviews: Hear the voices shaping tomorrow.</h3>
+        <h3> 📢 Seminars & Webinars: Connect with thought leaders.</h3>
+        <h3> 🌐 Social Media Integration: Amplify your reach and impact.</h3>
+        <h3> 📰 News & Updates: Stay informed in a rapidly evolving world.</h3>
+        <h3> 🤝 Community Engagement: Foster connections that matter.</h3>
+        <h3> 🔦 Community Spotlight: Celebrate impactful stories.</h3>
+        <h3> 📊 Policy Insight: Shape decisions with informed perspectives.</h3>
+        <h3> ⛏ Archaeological Investigation: Unearth the secrets of the past.</h3>
+        <h3> 🎓 Academic Field: Expand your intellectual horizons.</h3>
+        <h3> 🔬 Life Science, NeuroScience, Human Science: Explore the frontiers of knowledge.</h3>
+        <a href="https://bbsrm4591sdrok.wordpress.com">Click Here For More Information</h3>
+    </ul>
+
+    <div id="navigationContent" class="dropdown-content">
+        <!-- Add onclick attribute to the Research Article button -->
+        <button onclick="openResearchArticleTab()">Research Article</button>
+        <button>Case Study</button>
+        <!-- Other buttons for navigationContent -->
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+
+function showSlides() {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    } else if (slideIndex < 0) {
+        slideIndex = totalSlides - 1;
+    }
+
+    const translateValue = -slideIndex * 100 + '%';
+    slides.style.transform = `translateX(${translateValue})`;
+}
+
+function nextSlide() {
+    slideIndex++;
+    showSlides();
+}
+
+function prevSlide() {
+    slideIndex--;
+    showSlides();
+}
+
+document.addEventListener('DOMContentLoaded', showSlides);
+   // Function to open a new tab and show the content of a text file
+        function openResearchArticleTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'ResearchArticle.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+   // Function to open a new tab and show the content of a text file
+   function openCaseStudyTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'CaseStudy.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        } 
+   // Function to open a new tab and show the content of a text file
+   function openInterviewsTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'Interviews.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }         
+   // Function to open a new tab and show the content of a text file
+   function openSeminarsAndWebinarsTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'SeminarsAndWebinars.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+        function openSocialMediaTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'SocialMedia.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+        function openNewsAndUpdatesTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'NewsAndUpdates.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+        function openPolicyInsightTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'PolicyInsight.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+        function openArchaeologicalInvestigationTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'ArchaeologicalInvestigation.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+        function openAcademicFieldTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'AcademicField.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+        function openLifeScienceTab() {
+            // Replace 'path/to/your/article.txt' with the actual path to your text file
+            var articlePath = 'LifeScience.txt';
+    
+            // Fetch the content of the text file
+            fetch(articlePath)
+                .then(response => response.text())
+                .then(content => {
+                    // Create a new window with the text content
+                    var newTab = window.open();
+                    newTab.document.write('<pre>' + content + '</pre>');
+                })
+                .catch(error => console.error('Error fetching the article:', error));
+        }     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Existing toggleDropdown function
+        function toggleDropdown(dropdownId) {
+            var dropdownContent = document.getElementById(dropdownId);
+            var allDropdowns = document.querySelectorAll('.dropdown-content');
+    
+            allDropdowns.forEach(function (dropdown) {
+                if (dropdown.id !== dropdownId) {
+                    dropdown.style.display = 'none';
+                }
+            });
+    
+            if (dropdownContent.style.display === 'none' || dropdownContent.style.display === '') {
+                dropdownContent.style.display = 'block';
+            } else {
+                dropdownContent.style.display = 'none';
+            }
+        }
+    </script>
+    
+    
+</body>
+
+
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Home Page</title>
+</head>
+ 
+<body>
+    <header>
+        <h1>Our Innovating Cyber Journey!</h1>
+        <div style="float: right; margin-left: 10px;"> <!-- Adjust the margin-left for spacing -->
+            <img src="Foto.jpg" height="250" width="250"> <!-- Adjust the image source, alt text, and dimensions accordingly -->
+        </div>
+        <nav>
+ 
+            <ul style="text-align: center ;">
+                <a href="SDROKWebsite.html">🏠 Home 🏠</a><br> 
+                <a href="about.html">📍 About 📍</a><br>
+                <a href="contact.html">📞 Contact 📞</a><br>
+            </ul>
+
+        </nav>
+    </header>
+    <footer><h2> &copy; Our Website SDROK </h2></footer>
+</body>
+
+
+</head>
+<body>
+    <header>
+        <!-- Your website header content goes here -->
+    </header>
+
+    <main>
+        <!-- Your main content goes here -->
+
+        <!-- Link to YouTube -->
+        <a href="https://www.youtube.com/@bishnubdrsinghrayamajhi9643" target="_blank">
+            <img src="Youtube.png"  width="50" height="50"></a>
+            &nbsp;&nbsp;&nbsp;
+        <!-- Link to Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=100063495316107" target="_blank">
+            <img src="facebook.webp"  width="60" height="50"></a>
+            &nbsp;&nbsp;&nbsp;   
+        <!-- Link to Instagram -->
+        <a href="https://www.instagram.com/rayamajhi48/" target="_blank">
+            <img src="instagram.png"  width="50" height="50"></a>
+            &nbsp;&nbsp;&nbsp;
+         <!-- Link to twitterX -->
+        <a href="https://twitter.com/SinghBdr2458" target="_blank">
+            <img src="twitterX.png"  width="50" height="50"></a>
+            &nbsp;&nbsp;&nbsp;
+         <!-- Link to linkedin -->    
+        <a href="https://www.linkedin.com/in/bishnu-bahadur-singh-rayamajhi-5552b91a5/" target="_blank">
+            <img src="linkedin.png"  width="50" height="50"></a>
+        
+    </main>
+
+
+</body>
+</html>
+<head>
+    <script src="SDROKWebsite.js"></script>
+    <link rel="stylesheet" type="text/css" href="SDROKWebsite.css">
+    <style>
+        body {
+            background-color: lightblue;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif; /* Use a common font */
+        }
+
+        header {
+            background-color: rgb(165, 242, 0); /* Dark blue background */
+            color: rgb(239, 0, 0); /* White text color */
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0; /* Remove margin for h1 */
+        }
+
+        .center-buttons {
+            text-align: center;
+        }
+        
+    .animated-text-container {
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        background: linear-gradient(45deg, #3498db, #e74c3c);
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .animated-text {
+        animation: slideRight 10s linear infinite;
+    }
+
+     h3 {
+        margin: 0;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+</style>
+
+<div class="animated-text-container">
+        <div class="animated-text"><h3>This Web Software has developed by Bishnu Singh Rayamajhi for interwining innovation & precision in digital platform on disvover of new era.</h3></div>
+</div>
+
+    </style>
+    <title>Social Development & Research Information</title>
+    <title>Advancing Communities Through Insight & Innovation</title>
+</head>
+
+
